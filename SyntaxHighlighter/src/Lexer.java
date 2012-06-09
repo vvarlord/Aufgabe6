@@ -20,7 +20,7 @@ public class Lexer {
 		tokens.add(new Chars());
 		tokens.add(new Anno());
 		tokens.add(new Schluesselwoerter());
-		tokens.add(new Rest());
+		//tokens.add(new Rest());
 	}
 	private String einlesen(String dateiname){
 		BufferedReader input = null;
@@ -49,17 +49,15 @@ public class Lexer {
 		
 		for(Token t:tokens){
 			boolean ende=false;
-			System.out.println(t.regex);
+			//System.out.println(t.regex);
 			while(!ende){
 				try {
-					//System.out.println(code);
 					String temp[]=t.check(code);
 					code=temp[1];
-					//System.out.println(code);
+					System.out.println(temp[0]);
 				} catch (TokenNotFundExeption e) {
 					ende=true;
 				}
-				//ende=true;
 			}
 		}
 	}

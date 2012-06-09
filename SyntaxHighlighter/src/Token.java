@@ -6,15 +6,21 @@ public abstract class Token {
 	String regex;
 	String inhalt;
 	String[] check(String zuTestenderString)throws TokenNotFundExeption{
-		Pattern pattern = Pattern.compile(regex);
+		Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE | Pattern.DOTALL);
 		Matcher matcher = pattern.matcher(zuTestenderString);
 		if (matcher.find()) {
 			inhalt = matcher.group(1);
 			//System.out.println(zuTestenderString);
-			String[] temp=zuTestenderString.split(inhalt);
-			zuTestenderString=temp[0]+"?"+temp[1];
+			
+			
+			zuTestenderString=zuTestenderString.replaceFirst(inhalt, "?");
+			
+			
+			/*String[] temp=zuTestenderString.split(inhalt);
+			zuTestenderString=temp[0]+"?"+temp[1];*/
+
+			
 			//System.out.println(zuTestenderString);
-			System.out.println(inhalt);
 		}else{
 			throw new TokenNotFundExeption();
 		}

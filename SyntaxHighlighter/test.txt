@@ -1,7 +1,3 @@
-/**tesfsgfsgf
-sgfsgfs
-sgrer*/
-
 //test
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,7 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+'t'
+/*t*/
+@override
 public class Lexer {
 	ArrayList<Token> tokens;
 	String code = "h";
@@ -41,6 +39,7 @@ public class Lexer {
 		}
 		return temp;
 	}
+@test
 	public void tokenTest(){
 		for(Token t:tokens){
 			try {
