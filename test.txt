@@ -1,0 +1,51 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Lexer {
+	ArrayList<Token> tokens;
+	String code = "";
+	Lexer(String dateiname){
+		tokens=new ArrayList<Token>();
+		code = einlesen(dateiname);
+		tokens.add(new JavaDoc());
+		tokens.add(new ZweiZKommentar());
+		tokens.add(new EinZKommentar());
+		tokens.add(new Strings());
+		tokens.add(new Chars());
+		tokens.add(new Anno());
+		tokens.add(new Schluesselwoerter());
+		tokens.add(new Rest());
+	}
+	private String einlesen(String dateiname){
+		Scanner input = null;
+		File f = new File(dateiname);
+		if (!f.exists())
+			return null;
+		try {
+			input = new Scanner(new BufferedReader(new FileReader(f)));
+		} catch (FileNotFoundException e) {
+			System.err.print("Datei nicht gefunden!");
+		}
+		String temp="";
+		while (input.hasNext()) {
+			temp = temp + input.next()+"\n";
+		}
+		return temp;
+	}
+	public void tokenTest(){
+		for(Token t:tokens){
+			try {
+				System.out.println(t.check(code));
+			} catch (TokenNotFundExeption e) {
+			}
+		}
+	}
+	public static void main(String args[]){
+		Lexer l = new Lexer();
+	}
+
+}
