@@ -1,5 +1,5 @@
 
-public class JavaDoc extends Token {
+public class JavaDoc extends MehrZToken {
 	JavaDoc(){
 		regex ="(/\\*\\*.*?\\*/)";
 	}

@@ -14,13 +14,13 @@ public class Lexer {
 		tokens=new ArrayList<Token>();
 		code = einlesen(dateiname);
 		tokens.add(new JavaDoc());
-		tokens.add(new ZweiZKommentar());
+		tokens.add(new MehrZKommentar());
 		tokens.add(new EinZKommentar());
 		tokens.add(new Strings());
 		tokens.add(new Chars());
 		tokens.add(new Anno());
 		tokens.add(new Schluesselwoerter());
-		//tokens.add(new Rest());
+		tokens.add(new Rest());
 	}
 	private String einlesen(String dateiname){
 		BufferedReader input = null;

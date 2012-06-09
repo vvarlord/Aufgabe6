@@ -6,7 +6,10 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 't'
-/*t*/
+/**tdfga
+fdf*/
+/*tdfg2
+setdsrt*/
 @override
 public class Lexer {
 	ArrayList<Token> tokens;

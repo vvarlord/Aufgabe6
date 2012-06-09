@@ -1,6 +1,6 @@
 
-public class Rest extends Token{
+public class Rest extends MehrZToken{
 	Rest(){
-		regex="(.*$)";
+		regex="(\\?.*?\\?)";
 	}
 }
