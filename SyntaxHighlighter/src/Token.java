@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public abstract class Token {
 	String regex;
 	String inhalt;
-	String[] check(String zuTestenderString)throws TokenNotFundExeption{
+	String[] check(String zuTestenderString)throws TokenNotFoundExeption{
 		Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE | Pattern.DOTALL);
 		Matcher matcher = pattern.matcher(zuTestenderString);
 		if (matcher.find()) {
@@ -21,7 +21,7 @@ public abstract class Token {
 			
 			//System.out.println(zuTestenderString);
 		}else{
-			throw new TokenNotFundExeption();
+			throw new TokenNotFoundExeption();
 		}
 		String[] ret=new String[2];
 		ret[0]=inhalt;

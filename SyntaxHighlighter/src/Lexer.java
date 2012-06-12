@@ -55,7 +55,7 @@ public class Lexer {
 					String temp[]=t.check(code);
 					code=temp[1];
 					System.out.println(temp[0]);
-				} catch (TokenNotFundExeption e) {
+				} catch (TokenNotFoundExeption e) {
 					ende=true;
 				}
 			}

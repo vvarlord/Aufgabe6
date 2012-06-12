@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 
 
 public abstract class MehrZToken extends Token {
-	String[] check(String zuTestenderString)throws TokenNotFundExeption{
+	String[] check(String zuTestenderString)throws TokenNotFoundExeption{
 		Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE | Pattern.DOTALL);
 		Matcher matcher = pattern.matcher(zuTestenderString);
 		if (matcher.find()) {
@@ -11,7 +11,7 @@ public abstract class MehrZToken extends Token {
 			zuTestenderString=Pattern.compile(regex, Pattern.DOTALL).matcher(zuTestenderString).replaceFirst("?");
 
 		}else{
-			throw new TokenNotFundExeption();
+			throw new TokenNotFoundExeption();
 		}
 		String[] ret=new String[2];
 		ret[0]=inhalt;
