@@ -87,8 +87,9 @@ public class Lexer {
 					String temp[] = t.check(code, rueckgabe);
 					code = temp[1];
 					rueckgabe = temp[2];
-				} catch (TokenNotFundExeption e) {
+				} catch (TokenNotFoundExeption e) {
 					ende = true;
+
 				}
 			}
 		}
