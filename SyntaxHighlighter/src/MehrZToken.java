@@ -3,7 +3,8 @@ import java.util.regex.Pattern;
 
 
 public abstract class MehrZToken extends Token {
-	String[] check(String zuTestenderString)throws TokenNotFundExeption{
+		String[] check(String zuTestenderString)throws TokenNotFundExeption{
+		
 		Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE | Pattern.DOTALL);
 		Matcher matcher = pattern.matcher(zuTestenderString);
 		if (matcher.find()) {

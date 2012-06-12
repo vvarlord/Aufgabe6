@@ -5,7 +5,8 @@ import java.util.regex.Pattern;
 public abstract class Token {
 	String regex;
 	String inhalt;
-	String[] check(String zuTestenderString)throws TokenNotFundExeption{
+	String opentag, closetag;
+	String[] check(String zuTestenderString, String endString)throws TokenNotFundExeption{
 		Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE | Pattern.DOTALL);
 		Matcher matcher = pattern.matcher(zuTestenderString);
 		if (matcher.find()) {
@@ -14,6 +15,7 @@ public abstract class Token {
 			
 			
 			zuTestenderString=zuTestenderString.replaceFirst(inhalt, "?");
+			endString=endString
 			
 			/*String[] temp=zuTestenderString.split(inhalt);
 			zuTestenderString=temp[0]+"?"+temp[1];*/

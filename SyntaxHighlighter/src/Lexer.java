@@ -45,16 +45,14 @@ public class Lexer {
 		}
 		return temp;
 	}
-	public void tokenTest(){
+	private void tokenTest(){
 		
 		for(Token t:tokens){
 			boolean ende=false;
-			//System.out.println(t.regex);
 			while(!ende){
 				try {
 					String temp[]=t.check(code);
 					code=temp[1];
-					System.out.println(temp[0]);
 				} catch (TokenNotFundExeption e) {
 					ende=true;
 				}
