@@ -45,19 +45,22 @@ public class Lexer {
 		}
 		return temp;
 	}
-	private void tokenTest(){
-		
+	private String tokenTest(){
+		String rueckgabe=code;
 		for(Token t:tokens){
 			boolean ende=false;
 			while(!ende){
 				try {
-					String temp[]=t.check(code);
+					String temp[]=t.check(code, rueckgabe);
 					code=temp[1];
+					rueckgabe=temp[2];
 				} catch (TokenNotFundExeption e) {
 					ende=true;
 				}
 			}
 		}
+		rueckgabe=rueckgabe.replaceAll("\\n", "<BR>");
+		return rueckgabe;
 	}
 	public static void main(String args[]){
 		Lexer l = new Lexer("test.txt");
