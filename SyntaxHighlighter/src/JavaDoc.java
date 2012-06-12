@@ -6,6 +6,8 @@
 public class JavaDoc extends MehrZToken {
 	JavaDoc(){
 		regex ="(/\\*\\*.*?\\*/)";
+		opentag ="<font color=\"RED\">";
+		closetag = "</font>";
 	}
 	
 }

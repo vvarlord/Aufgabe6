@@ -43,6 +43,9 @@ public class Lexer {
 		}
 		code = temp;
 	}
+	public void setCode(String s){
+		code=s;
+	}
 	//setzt alle tokens
 	private void generateToken() {
 		tokens.add(new JavaDoc());
@@ -82,7 +85,7 @@ public class Lexer {
  * Wertet den akutellen code aus und gibt den code mit Html tags zurück
  * @return Html tag bestückter codes
  */
-	private String tokenTest() {
+	public String tokenTest() {
 		String rueckgabe = code;
 		for (Token t : tokens) {
 			boolean ende = false;
@@ -102,8 +105,5 @@ public class Lexer {
 		return rueckgabe;
 	}
 
-	public static void main(String args[]) {
-		Lexer l = new Lexer("test.txt");
-		l.tokenTest();
-	}
+	
 }

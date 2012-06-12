@@ -1,8 +1,12 @@
 import java.awt.GridLayout;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.StringReader;
+import java.util.EventListener;
 
-import javax.swing.text.html.*;
+
+
 import javax.swing.*;
 
 /**
@@ -12,11 +16,12 @@ import javax.swing.*;
  */
 public class GUI extends JFrame{
 	//Panel für den Editor zum einsetzen in das Fenster mit GridLayout.
-	private JPanel jp= new JPanel(new GridLayout(1, 1));
+	private JPanel jp= new JPanel(new GridLayout(1, 2));
 	//JEditorPane um HTML tags erlauben und Parsen zu können. Sonst selbes verhalten wie 
 	//JTextarea
-	private JEditorPane editor = new JEditorPane();
-	
+	JEditorPane editor = new JEditorPane();
+	JTextArea ta = new JTextArea();
+	private LiveHandler lh;
 	
 /**
  * Konstruktor ohne Übergabeparameter.
@@ -25,21 +30,26 @@ public class GUI extends JFrame{
  */
 	public GUI(){
 		super("SyntaxHighlighter");
+       this.lh= new LiveHandler(this);
+	}
+	
+	public void createGUI(){
+		
 		setSize(300,300);
         setLocation(500,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        editor.setEditable(true); 
+        editor.setEditable(false); 
         editor.setContentType("text/html");
-        
-
-        editor.setText("<html><body><br>testtest</body></html>");
+        editor.setText("");
         
         
+        ta.addKeyListener(lh);
+        jp.add(ta);
         jp.add(editor);
+       
         getContentPane().add(jp);
         
         this.setVisible(true);
-        
 	}
 	/**
 	 * 
@@ -50,9 +60,16 @@ public class GUI extends JFrame{
 		editor.setText(t);
 	}
 	
+	public BufferedReader sendText(){
+		BufferedReader br = new BufferedReader(new StringReader(ta.getText()));
+		
+		return br;
+	}
+	
 	
 	public static void main(String[] args){
 		GUI mg = new GUI();
+		mg.createGUI();
 	}
 	
 }

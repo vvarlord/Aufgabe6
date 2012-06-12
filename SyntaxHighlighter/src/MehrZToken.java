@@ -21,7 +21,7 @@ public abstract class MehrZToken extends Token {
 			inhalt = matcher.group(1);
 			zuTestenderString=Pattern.compile(regex, Pattern.DOTALL).matcher(zuTestenderString).replaceFirst("?");
 			if(!temp.contains(inhalt))
-				zuTestenderString=Pattern.compile(regex, Pattern.DOTALL).matcher(zuTestenderString).replaceAll( opentag+inhalt+closetag);
+				endString=Pattern.compile(regex, Pattern.DOTALL).matcher(endString).replaceAll( opentag+inhalt+closetag);
 			temp.add(inhalt);
 		}else{
 			throw new TokenNotFoundExeption();
