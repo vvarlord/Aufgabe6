@@ -10,9 +10,37 @@ import java.util.Scanner;
 public class Lexer {
 	ArrayList<Token> tokens;
 	String code = "";
-	Lexer(String dateiname){
-		tokens=new ArrayList<Token>();
+	/**
+	 * Erzeuft neuen Lexer liest code aus einer datei ein
+	 * @param dateiname Der Path für die auszulesende datei
+	 */
+	Lexer(String dateiname) {
+		tokens = new ArrayList<Token>();
 		code = einlesen(dateiname);
+		generateToken();
+	}
+
+	/**
+	 * Erzeuft neuen Lexer, Anschließend muss die methode setCode aufgerufen werden
+	 */
+	Lexer() {
+		tokens = new ArrayList<Token>();
+		generateToken();
+	}
+	/**
+	 * Setzt den code aus einem BufferedReader
+	 * @param inp BufferedReader inhalt wirde ausgelesen
+	 * @throws IOException falls übergebener reader defekt ist
+	 */
+	public void setCode(BufferedReader inp) throws IOException {
+		String temp = "";
+		while (inp.ready()) {
+			temp = temp + inp.readLine() + "\n";
+		}
+		code = temp;
+	}
+	//setzt alle tokens
+	private void generateToken() {
 		tokens.add(new JavaDoc());
 		tokens.add(new MehrZKommentar());
 		tokens.add(new EinZKommentar());
@@ -22,10 +50,11 @@ public class Lexer {
 		tokens.add(new Schluesselwoerter());
 		tokens.add(new Rest());
 	}
-	private String einlesen(String dateiname){
+	//Liest code aus einer datei ein
+	private String einlesen(String dateiname) {
 		BufferedReader input = null;
 		File f = new File(dateiname);
-		if (!f.exists()){
+		if (!f.exists()) {
 			System.err.print("Datei nicht gefunden!\n");
 			return "";
 		}
@@ -34,10 +63,10 @@ public class Lexer {
 		} catch (FileNotFoundException e) {
 			System.err.print("Datei nicht gefunden!");
 		}
-		String temp="";
+		String temp = "";
 		try {
 			while (input.ready()) {
-					temp = temp + input.readLine()+"\n";
+				temp = temp + input.readLine() + "\n";
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -45,24 +74,30 @@ public class Lexer {
 		}
 		return temp;
 	}
-	private String tokenTest(){
-		String rueckgabe=code;
-		for(Token t:tokens){
-			boolean ende=false;
-			while(!ende){
+/**
+ * Wertet den akutellen code aus und gibt den code mit Html tags zurück
+ * @return Html tag bestückter codes
+ */
+	private String tokenTest() {
+		String rueckgabe = code;
+		for (Token t : tokens) {
+			boolean ende = false;
+			while (!ende) {
 				try {
-					String temp[]=t.check(code, rueckgabe);
-					code=temp[1];
-					rueckgabe=temp[2];
+					String temp[] = t.check(code, rueckgabe);
+					code = temp[1];
+					rueckgabe = temp[2];
 				} catch (TokenNotFundExeption e) {
-					ende=true;
+					ende = true;
 				}
 			}
 		}
-		rueckgabe=rueckgabe.replaceAll("\\n", "<BR>");
+		rueckgabe = rueckgabe.replaceAll("\\n", "<BR>");
+		rueckgabe = "<html><body>"+rueckgabe+"</html></body>";
 		return rueckgabe;
 	}
-	public static void main(String args[]){
+
+	public static void main(String args[]) {
 		Lexer l = new Lexer("test.txt");
 		l.tokenTest();
 	}

@@ -3,6 +3,13 @@ import java.util.regex.Pattern;
 
 
 public abstract class MehrZToken extends Token {
+	/**
+	 * Sucht nach dem Regulerem ausdruck in zuTestenderString und Schreibt ihn in endString
+	 * @param zuTestenderString String der nach regulerem ausdruck abgesucht wird
+	 * @param endString String in dem der code mit Html tags gespeichert werden soll
+	 * @return String array [0]gefundenes token [1] zuTestenderString inhalt ersetzt mit ? wird an die näachste check methode übergeben [2] Code mit html tags 
+	 * @throws TokenNotFundExeption Falls der RegEx in zuTestenderString nicht gefunden wurde
+	 */
 		String[] check(String zuTestenderString, String endString)throws TokenNotFundExeption{
 		
 		Pattern pattern = Pattern.compile(regex, Pattern.MULTILINE | Pattern.DOTALL);
