@@ -2,12 +2,16 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+/**
+ * Stellt check methode für einzeilige Tokens zur verfügung
+ * @author Christian
+ *
+ */
 public abstract class Token {
-	String regex;
-	String inhalt;
-	String opentag, closetag;
-	ArrayList<String> temp=new ArrayList<String>();
+	protected String regex;
+	protected String inhalt;
+	protected String opentag, closetag;
+	protected ArrayList<String> temp=new ArrayList<String>();
 	/**
 	 * Sucht nach dem Regulerem ausdruck in zuTestenderString und Schreibt ihn in endString
 	 * @param zuTestenderString String der nach regulerem ausdruck abgesucht wird

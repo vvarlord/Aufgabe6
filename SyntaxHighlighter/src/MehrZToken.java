@@ -1,7 +1,11 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+/**
+ * Stellt check methode für mehrzeilige tokens zur verfügung
+ * @author Christian
+ *
+ */
 public abstract class MehrZToken extends Token {
 	/**
 	 * Sucht nach dem Regulerem ausdruck in zuTestenderString und Schreibt ihn in endString

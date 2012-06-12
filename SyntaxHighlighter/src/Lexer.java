@@ -6,10 +6,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.Scanner;
-
+/**
+ * Lexer der aus java quellcode mit html tags eingefärbtem code erstellt
+ * @author Christian
+ *
+ */
 public class Lexer {
-	ArrayList<Token> tokens;
-	String code = "";
+	private ArrayList<Token> tokens;
+	private String code = "";
 	/**
 	 * Erzeuft neuen Lexer liest code aus einer datei ein
 	 * @param dateiname Der Path für die auszulesende datei
