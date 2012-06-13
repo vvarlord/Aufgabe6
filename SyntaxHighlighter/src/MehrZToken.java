@@ -32,4 +32,10 @@ public abstract class MehrZToken extends Token {
 		ret[2]=endString;
 		return ret;
 	}
+		/**
+		 * Entfernt alle Token aus dem eingegeben text und giebt diesen zurück
+		 * @param s String aus dem die Token entfernt werden sollen
+		 * @return String ohne token
+		 */
+
 }

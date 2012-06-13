@@ -1,8 +1,8 @@
 
 /**
- * 
- * @author Christian Sander
  * Eine von Token abgeleitete Klasse, Regulärer Ausdruck für Einzeilige Kommentare.
+ * @author Christian Sander
+ * 
  */
 public class EinZKommentar extends Token {
 	

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2012-06-13T14:44:59</date>
+  <millis>1339591499196</millis>
+  <sequence>1</sequence>
+  <logger>Datei</logger>
+  <level>INFO</level>
+  <class>LiveHandler</class>
+  <method>keyPressed</method>
+  <thread>10</thread>
+  <message></message>
+</record>
+<record>
+  <date>2012-06-13T14:44:59</date>
+  <millis>1339591499240</millis>
+  <sequence>3</sequence>
+  <logger>Datei</logger>
+  <level>INFO</level>
+  <class>LiveHandler</class>
+  <method>keyPressed</method>
+  <thread>10</thread>
+  <message>t</message>
+</record>
+<record>
+  <date>2012-06-13T14:44:59</date>
+  <millis>1339591499462</millis>
+  <sequence>5</sequence>
+  <logger>Datei</logger>
+  <level>INFO</level>
+  <class>LiveHandler</class>
+  <method>keyPressed</method>
+  <thread>10</thread>
+  <message>te</message>
+</record>
+<record>
+  <date>2012-06-13T14:44:59</date>
+  <millis>1339591499605</millis>
+  <sequence>7</sequence>
+  <logger>Datei</logger>
+  <level>INFO</level>
+  <class>LiveHandler</class>
+  <method>keyPressed</method>
+  <thread>10</thread>
+  <message>tes</message>
+</record>
+<record>
+  <date>2012-06-13T14:44:59</date>
+  <millis>1339591499994</millis>
+  <sequence>9</sequence>
+  <logger>Datei</logger>
+  <level>INFO</level>
+  <class>LiveHandler</class>
+  <method>keyPressed</method>
+  <thread>10</thread>
+  <message>test</message>
+</record>
+<record>
+  <date>2012-06-13T14:45:00</date>
+  <millis>1339591500098</millis>
+  <sequence>11</sequence>
+  <logger>Datei</logger>
+  <level>INFO</level>
+  <class>LiveHandler</class>
+  <method>keyPressed</method>
+  <thread>10</thread>
+  <message>testt</message>
+</record>
+<record>
+  <date>2012-06-13T14:45:00</date>
+  <millis>1339591500300</millis>
+  <sequence>13</sequence>
+  <logger>Datei</logger>
+  <level>INFO</level>
+  <class>LiveHandler</class>
+  <method>keyPressed</method>
+  <thread>10</thread>
+  <message>testte</message>
+</record>
+<record>
+  <date>2012-06-13T14:45:00</date>
+  <millis>1339591500404</millis>
+  <sequence>15</sequence>
+  <logger>Datei</logger>
+  <level>INFO</level>
+  <class>LiveHandler</class>
+  <method>keyPressed</method>
+  <thread>10</thread>
+  <message>testtes</message>
+</record>
+</log>

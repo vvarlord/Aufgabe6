@@ -39,5 +39,14 @@ public abstract class Token {
 		ret[2]=endString;
 		return ret;
 	}
+	/**
+	 * Entfernt alle Token aus dem eingegeben text und giebt diesen zurück
+	 * @param s String aus dem die Token entfernt werden sollen
+	 * @return String ohne token
+	 */
+	public String removeToken(String s){
+		return Pattern.compile(regex, Pattern.DOTALL).matcher(s).replaceAll("");
+		
+	}
 
 }

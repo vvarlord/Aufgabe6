@@ -76,8 +76,7 @@ public class Lexer {
 				temp = temp + input.readLine() + "\n";
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.print("Fehler beim auslesen der Datei");
 		}
 		return temp;
 	}

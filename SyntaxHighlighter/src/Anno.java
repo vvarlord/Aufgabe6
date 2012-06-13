@@ -1,8 +1,8 @@
 
 /**
- * 
- * @author Christian Sander
  * Eine von Token abgeleitete Klasse, Regulärer Ausdruck für Annotationen.
+ * @author Christian Sander
+ * 
  */
 public class Anno extends Token {
 	Anno(){

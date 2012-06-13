@@ -1,7 +1,7 @@
 /**
- * 
- * @author Christian Sander
  * Eine von Token abgeleitete Klasse, Regulärer Ausdruck für Java Schlüsselwörter.
+ * @author Christian Sander
+ * 
  */
 public class Schluesselwoerter extends Token{
 	Schluesselwoerter(){

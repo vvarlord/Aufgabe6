@@ -1,8 +1,8 @@
 
 /**
- * 
- * @author Christian Sander
  * Eine von MehrZToken abgeleitete Klasse, Regulärer Ausdruck für Mehrzeilige Kommentare.
+ * @author Christian Sander
+ * 
  */
 
 
