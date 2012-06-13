@@ -20,15 +20,19 @@ public class LiveHandler implements KeyListener {
 	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
 	 */
 	public void keyPressed(KeyEvent event) {
+
 				Lexer l = new Lexer();
 				String text=g.ta.getText();
 				l.setCode(text);
 				log.info(text);
 				text=l.tokenTest();
 				g.setShowText(text);
+
 				
 				g.repaint();
+
 	
+
 
 	}
 

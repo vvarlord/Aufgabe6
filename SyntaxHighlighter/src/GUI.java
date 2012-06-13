@@ -40,6 +40,7 @@ public class GUI extends JFrame {
 		this.lh = new LiveHandler(this);
 	}
 
+
 	 private class Save extends WindowAdapter { 
 		 /**
 		  * bei Schliesen des fensters wird wenn über logger erlaubt der inhalt von der textarea ta in 2 html dateien gespeichert
@@ -88,6 +89,7 @@ public class GUI extends JFrame {
 	public void setShowText(String t) {
 		editor.setText(t);
 	}
+
 	/**
 	 * Wandelt den ihnhalt von der textarea ta in einen BufferedReader um
 	 * @return BufferedReader vom inhalt von ta
@@ -97,7 +99,13 @@ public class GUI extends JFrame {
 		return br;
 	}
 
-	public static void main(String[] args) {
+	
+
+	
+	
+	
+	public static void main(String[] args){
+
 		GUI mg = new GUI();
 		Logger log1 = Logger.getLogger("Konsole");
 		Logger log2 = Logger.getLogger("Datei");

@@ -12,8 +12,8 @@ import java.util.Scanner;
  *
  */
 public class Lexer {
-	private ArrayList<Token> tokens;
-	private String code = "";
+	/*private*/ ArrayList<Token> tokens;
+	/*private*/ String code = "";
 	/**
 	 * Erzeuft neuen Lexer liest code aus einer datei ein
 	 * @param dateiname Der Path für die auszulesende datei
@@ -47,7 +47,7 @@ public class Lexer {
 		code=s;
 	}
 	//setzt alle tokens
-	private void generateToken() {
+	/*private*/ void generateToken() {
 		tokens.add(new JavaDoc());
 		tokens.add(new MehrZKommentar());
 		tokens.add(new EinZKommentar());
@@ -58,10 +58,11 @@ public class Lexer {
 		tokens.add(new Rest());
 	}
 	//Liest code aus einer datei ein
-	private String einlesen(String dateiname) {
+	/*private*/ String einlesen(String dateiname) {
 		BufferedReader input = null;
 		File f = new File(dateiname);
 		if (!f.exists()) {
+			
 			System.err.print("Datei nicht gefunden!\n");
 			return "";
 		}
@@ -100,7 +101,7 @@ public class Lexer {
 			}
 		}
 		rueckgabe = rueckgabe.replaceAll("\\n", "<BR>");
-		rueckgabe = "<html><body>"+rueckgabe+"</html></body>";
+		rueckgabe = "<html><body>"+rueckgabe+"</body></html>";
 		return rueckgabe;
 	}
 
