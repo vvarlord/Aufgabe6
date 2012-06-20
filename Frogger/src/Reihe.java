@@ -2,10 +2,13 @@ import java.util.ArrayList;
 
 
 public class Reihe {
-	int speed;
-	int richtung;
-	int hohe;
-	ArrayList<GameObject> go=new ArrayList<GameObject>();
+	private int speed;
+	private int richtung;
+	private int hohe;
+	private ArrayList<GameObject> go=new ArrayList<GameObject>();
+	public ArrayList<GameObject> getGo() {
+		return go;
+	}
 	public Reihe(int speed, int richtung, int hohe) {
 		super();
 		this.speed = speed;
@@ -25,7 +28,11 @@ public class Reihe {
 		return go.get(0);
 	}
 	GameObject getLast(){
+		if(go.size()>0)
 		return go.get(go.size()-1);
+		else{
+			return new Car(300, getHohe(), getSpeed());
+		}
 	}
 	public int getSpeed() {
 		return speed;
